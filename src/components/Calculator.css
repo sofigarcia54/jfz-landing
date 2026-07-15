@@ -1,0 +1,139 @@
+.calculator-section {
+  padding: 80px 0;
+  background: var(--color-white);
+}
+
+.calculator-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 30px;
+}
+
+.calculator-card {
+  background: var(--color-white);
+  padding: 28px 24px;
+  border-radius: var(--radius);
+  border: 1px solid #e8eef4;
+  box-shadow: var(--shadow);
+}
+
+.calculator-card h4 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-secondary);
+  margin-bottom: 6px;
+}
+
+.calculator-card .formula {
+  font-family: 'Courier New', monospace;
+  font-size: 0.85rem;
+  color: #5a6f85;
+  background: #f5f8fa;
+  padding: 8px 12px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.input-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+  margin-bottom: 14px;
+}
+
+.input-group label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--color-text);
+  min-width: 100px;
+}
+
+.input-group input,
+.input-group select {
+  flex: 1;
+  min-width: 80px;
+  padding: 8px 12px;
+  border: 1px solid #d0dce8;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  background: #fafcfe;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+  border-color: var(--color-secondary);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(53, 101, 173, 0.1);
+}
+
+.input-group .unit {
+  font-size: 0.8rem;
+  color: #5a6f85;
+  min-width: 40px;
+}
+
+.btn-calc {
+  padding: 8px 20px;
+  background: var(--color-secondary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.btn-calc:hover {
+  background: #2a5290;
+}
+
+.result-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid #e8eef4;
+}
+
+.result-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-secondary);
+  min-width: 100px;
+}
+
+.result-group input {
+  flex: 1;
+  min-width: 80px;
+  padding: 8px 12px;
+  border: 1px solid #d0dce8;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  background: #f0f5fb;
+  font-weight: 600;
+  color: var(--color-secondary);
+}
+
+.result-group .unit {
+  font-size: 0.8rem;
+  color: #5a6f85;
+  min-width: 40px;
+}
+
+.calculator-note {
+  margin-top: 20px;
+  padding: 16px 20px;
+  background: #f0f7fc;
+  border-left: 4px solid #3565ad;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: #1a2a3a;
+}
+
+.calculator-note strong {
+  color: #3565ad;
+}
+
