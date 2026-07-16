@@ -1,0 +1,27 @@
+.project-hero{
+    padding: 140px 0 60px;
+    background: #ffffff;
+}
+
+.project-hero .container{
+    max-width:1200px;
+    margin:auto;
+    padding:0 24px;
+}
+
+.project-hero h1{
+    font-size:3rem;
+    color:#1a2a3a;
+    margin-bottom:20px;
+}
+
+.project-hero h1 span{
+    color:#3565ad;
+}
+
+.project-hero p{
+    max-width:800px;
+    color:#4b5c70;
+    font-size:1.1rem;
+    line-height:1.8;
+}

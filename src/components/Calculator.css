@@ -1,68 +1,322 @@
+/* ============================================
+   CALCULADORA - ESTILO UNIFICADO CON LANDING PAGE
+   ============================================ */
+
 .calculator-section {
   padding: 80px 0;
-  background: var(--color-white);
+  background: #061011;
 }
 
-.calculator-grid {
+.calculator-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  width: 100%;
+}
+
+/* Selector de isótopos */
+.isotope-selector-global {
+  margin-bottom: 30px;
+  padding: 24px 28px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  border-radius: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+.isotope-selector-global .input-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 0;
+}
+
+.isotope-selector-global .input-group label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #3565ad;
+  min-width: 180px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.isotope-selector-global .input-group select {
+  flex: 1;
+  min-width: 200px;
+  max-width: 400px;
+  padding: 10px 16px;
+  border: 1px solid #d0dce8;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  background: #ffffff;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  transition: all 0.3s ease;
+}
+
+.isotope-selector-global .input-group select:focus {
+  border-color: #3565ad;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(53, 101, 173, 0.1);
+}
+
+.btn-clear {
+  background: #6c757d;
+  padding: 10px 24px;
+  border: none;
+  border-radius: 50px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.9rem;
+}
+
+.btn-clear:hover {
+  background: #5a6268;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(108, 117, 125, 0.3);
+}
+
+/* Wrapper dos columnas */
+.calculator-wrapper {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  grid-template-columns: 2.5fr 1fr;
+  gap: 30px;
+  margin-top: 30px;
+  align-items: start;
+}
+
+.calculator-col {
+  display: flex;
+  flex-direction: column;
   gap: 30px;
 }
 
-.calculator-card {
-  background: var(--color-white);
-  padding: 28px 24px;
-  border-radius: var(--radius);
-  border: 1px solid #e8eef4;
-  box-shadow: var(--shadow);
+.calculator-col .calculator-grid {
+  margin-top: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+/* Historial - columna derecha */
+.historial-col {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  border-radius: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  padding: 24px 24px;
+  position: sticky;
+  top: 100px;
+  max-height: 650px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-width: 280px;
+  transition: .3s ease;
+}
+
+.historial-col:hover{
+    transform: translateY(-4px);
+
+    box-shadow: 0 15px 40px rgba(0,0,0,.30);
+
+    border-color: rgba(22,233,180,.35);
+}
+
+.historial-col .historial-section {
+  margin-top: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  width: 100%;
+}
+
+.historial-col .historial-list {
+  max-height: 280px;
+  overflow-y: auto;
+  width: 100%;
+}
+
+.historial-col .conversor-section {
+  margin-top: 24px;
+  padding: 20px 0 0 0;
+  background: transparent;
+  border: none;
+  border-top: 2px solid rgba(0, 0, 0, 0.06);
+  width: 100%;
+}
+
+.historial-col .conversor-section h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #3565ad;
+  margin-bottom: 16px;
+  text-align: center;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.historial-col .conversor-section .conversor-grid {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.historial-col .conversor-section .input-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 10px;
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.historial-col .conversor-section .input-group label {
+  min-width: 55px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #2d4054;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.historial-col .conversor-section .input-group input,
+.historial-col .conversor-section .input-group select {
+  flex: 1;
+  min-width: 80px;
+  padding: 8px 14px;
+  border: 1px solid #d0dce8;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  background: #ffffff;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  transition: all 0.3s ease;
+}
+
+.historial-col .conversor-section .input-group input:focus,
+.historial-col .conversor-section .input-group select:focus {
+  border-color: #3565ad;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(53, 101, 173, 0.1);
+}
+
+.historial-col .conversor-section .result-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 10px;
+  margin-top: 8px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  width: 100%;
+}
+
+.historial-col .conversor-section .result-group label {
+  min-width: 55px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #3565ad;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.historial-col .conversor-section .result-group input {
+  flex: 1;
+  min-width: 80px;
+  padding: 8px 14px;
+  border: 1px solid #d0dce8;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  background: #f0f5fb;
+  font-weight: 600;
+  color: #3565ad;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.historial-col .conversor-section .btn-calc {
+  width: 100%;
+  padding: 10px;
+  margin-top: 4px;
+}
+
+/* Tarjetas de calculadora */
+.calculator-card{
+  background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(255,255,255,.10);
+
+    border-radius: 22px;
+    padding: 28px;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,.25);
+
+    transition: .3s;
+}
+
+.calculator-card:hover{
+    background: rgba(255,255,255,.85);
+    border-color: #16e9b4;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 35px rgba(0,0,0,.15);
 }
 
 .calculator-card h4 {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: 700;
-  color: var(--color-secondary);
+  color: #3565ad;
   margin-bottom: 6px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
 .calculator-card .formula {
-  font-family: 'Courier New', monospace;
-  font-size: 0.85rem;
-  color: #5a6f85;
-  background: #f5f8fa;
+  font-family: 'Times New Roman', serif;
+  font-size: 0.95rem;
+  color: #2d4054;
+  background: rgba(0, 0, 0, 0.03);
   padding: 8px 12px;
   border-radius: 8px;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
+  text-align: center;
 }
 
+/* Inputs */
 .input-group {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 8px 12px;
-  margin-bottom: 14px;
+  gap: 8px 10px;
+  margin-bottom: 12px;
 }
 
 .input-group label {
   font-size: 0.85rem;
   font-weight: 500;
-  color: var(--color-text);
-  min-width: 100px;
+  color: #2d4054;
+  min-width: 80px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
 .input-group input,
 .input-group select {
   flex: 1;
-  min-width: 80px;
-  padding: 8px 12px;
+  min-width: 60px;
+  padding: 8px 14px;
   border: 1px solid #d0dce8;
-  border-radius: 8px;
+  border-radius: 50px;
   font-size: 0.95rem;
-  background: #fafcfe;
+  background: #ffffff;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  transition: all 0.3s ease;
 }
 
 .input-group input:focus,
 .input-group select:focus {
-  border-color: var(--color-secondary);
+  border-color: #3565ad;
   outline: none;
   box-shadow: 0 0 0 3px rgba(53, 101, 173, 0.1);
 }
@@ -70,70 +324,488 @@
 .input-group .unit {
   font-size: 0.8rem;
   color: #5a6f85;
-  min-width: 40px;
+  min-width: 35px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
+/* Botones */
 .btn-calc {
-  padding: 8px 20px;
-  background: var(--color-secondary);
+  padding: 10px 20px;
+  background: #3565ad;
   color: white;
   border: none;
-  border-radius: 8px;
+  border-radius: 50px;
   cursor: pointer;
   font-weight: 600;
-  transition: background 0.2s;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
 .btn-calc:hover {
   background: #2a5290;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(53, 101, 173, 0.3);
 }
 
+.btn-block {
+  width: 100%;
+  padding: 12px;
+}
+
+.btn-copy {
+  width: 100%;
+  margin-top: 12px;
+  padding: 12px;
+  border: none;
+  border-radius: 50px;
+  background: #16e9b4;
+  color: #1a2a3a;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.btn-copy:hover {
+  background: #0cc49a;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(22, 233, 180, 0.3);
+}
+
+.btn-clear-historial {
+  padding: 6px 16px;
+  background: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: all 0.3s ease;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.btn-clear-historial:hover {
+  background: #c0392b;
+  transform: translateY(-2px);
+}
+
+.btn-hoy {
+  padding: 6px 14px;
+  background: #e8f0fe;
+  color: #3565ad;
+  border: 1px solid #d0dce8;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 0.75rem;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.btn-hoy:hover {
+  background: #d0dce8;
+  transform: translateY(-2px);
+}
+
+/* Resultados */
 .result-group {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 8px 12px;
-  margin-top: 14px;
-  padding-top: 14px;
-  border-top: 1px solid #e8eef4;
+  gap: 8px 10px;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .result-group label {
   font-size: 0.85rem;
   font-weight: 600;
-  color: var(--color-secondary);
-  min-width: 100px;
+  color: #3565ad;
+  min-width: 80px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
 .result-group input {
   flex: 1;
-  min-width: 80px;
-  padding: 8px 12px;
+  min-width: 60px;
+  padding: 8px 14px;
   border: 1px solid #d0dce8;
-  border-radius: 8px;
+  border-radius: 50px;
   font-size: 0.95rem;
   background: #f0f5fb;
   font-weight: 600;
-  color: var(--color-secondary);
+  color: #3565ad;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
 .result-group .unit {
   font-size: 0.8rem;
   color: #5a6f85;
-  min-width: 40px;
+  min-width: 35px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-.calculator-note {
-  margin-top: 20px;
-  padding: 16px 20px;
-  background: #f0f7fc;
-  border-left: 4px solid #3565ad;
-  border-radius: 8px;
-  font-size: 0.95rem;
-  color: #1a2a3a;
+/* Detalles del cálculo */
+.details-group {
+  margin-top: 16px;
+  padding: 14px 16px;
+  background: rgba(0, 0, 0, 0.03);
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.04);
 }
 
-.calculator-note strong {
+.details-group h5 {
+  font-size: 0.85rem;
+  font-weight: 700;
   color: #3565ad;
+  margin-bottom: 8px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
+.detail-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 0;
+  font-size: 0.85rem;
+  color: #2d4054;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.detail-item:last-child {
+  border-bottom: none;
+}
+
+.detail-item span:first-child {
+  font-weight: 500;
+  color: #4a5f75;
+}
+
+.detail-item span:last-child {
+  font-weight: 600;
+  color: #1a2a3a;
+  font-family: 'Courier New', monospace;
+}
+
+.formula-note {
+  margin-top: 12px;
+  padding: 8px 12px;
+  background: #fff3cd;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  color: #856404;
+  border: 1px solid #ffeeba;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Historial */
+.historial-section {
+  margin-top: 0;
+  padding: 0;
+  background: transparent;
+  border: none;
+}
+
+.historial-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.historial-header h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #3565ad;
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.historial-list {
+  max-height: 280px;
+  overflow-y: auto;
+}
+
+.historial-item {
+  display: flex;
+  gap: 12px;
+  padding: 8px 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+  font-size: 0.85rem;
+  color: #2d4054;
+  align-items: center;
+}
+
+.historial-item:last-child {
+  border-bottom: none;
+}
+
+.historial-fecha {
+  min-width: 120px;
+  color: #5a6f85;
+  font-size: 0.75rem;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.historial-tipo {
+  min-width: 120px;
+  font-weight: 600;
+  color: #3565ad;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.historial-resultado {
+  font-weight: 500;
+  color: #1a2a3a;
+  margin-left: auto;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.empty-message {
+  color: #5a6f85;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Conversor */
+.conversor-section {
+  margin-top: 20px;
+  padding: 16px 0 0 0;
+  background: transparent;
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.conversor-section h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #3565ad;
+  margin-bottom: 16px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.conversor-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.conversor-grid .input-group {
+  margin-bottom: 0;
+}
+
+.conversor-grid .input-group label {
+  min-width: 60px;
+  font-size: 0.8rem;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.conversor-grid .result-group {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+
+.conversor-grid .result-group label {
+  min-width: 60px;
+  font-size: 0.8rem;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.conversor-grid .btn-calc {
+  width: 100%;
+}
+
+/* Herramientas de fechas */
+.fecha-section {
+  margin-top: 40px;
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  border-radius: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  transition:.3s ease;
+}
+
+.fecha-section:hover{
+    transform: translateY(-4px);
+
+    box-shadow: 0 15px 40px rgba(0,0,0,.30);
+
+    border-color: rgba(22,233,180,.35);
+}
+
+.fecha-section h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #3565ad;
+  margin-bottom: 16px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.fecha-tab {
+  margin-bottom: 16px;
+}
+
+.fecha-tab:last-child {
+  margin-bottom: 0;
+}
+
+.fecha-tab h5 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #2d4054;
+  margin-bottom: 10px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.fecha-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  align-items: end;
+}
+
+.fecha-row .input-group {
+  margin-bottom: 0;
+}
+
+.fecha-row .input-group label {
+  min-width: 70px;
+  font-size: 0.8rem;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.fecha-row .input-group input {
+  min-width: 100px;
+  padding: 8px 14px;
+  border: 1px solid #d0dce8;
+  border-radius: 50px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.fecha-row .result-group {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+
+.fecha-row .result-group label {
+  min-width: 70px;
+  font-size: 0.8rem;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.fecha-section hr {
+  margin: 16px 0;
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+/* Tabla de isótopos */
+.isotopes-section {
+  margin-top: 40px;
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.879);
+  backdrop-filter: blur(8px);
+  border-radius: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+.isotopes-section h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #3565ad;
+  margin-bottom: 16px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  transition:.3s ease;
+}
+
+.isotopes-section:hover{
+    transform: translateY(-4px);
+
+    box-shadow: 0 15px 40px rgba(0,0,0,.30);
+
+    border-color: rgba(22,233,180,.35);
+}
+.isotopes-table-wrapper {
+  overflow-x: auto;
+}
+
+.isotopes-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.isotopes-table th {
+  background: #3565ad;
+  color: white;
+  padding: 10px 12px;
+  text-align: left;
+  font-weight: 600;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.isotopes-table td {
+  padding: 8px 12px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.isotopes-table tbody tr:hover {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.isotopes-note {
+  margin-top: 12px;
+  font-size: 0.8rem;
+  color: #856404;
+  background: #fff3cd;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #ffeeba;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .calculator-wrapper {
+    grid-template-columns: 1fr;
+  }
+  .historial-col {
+    position: static;
+    max-height: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .calculator-col .calculator-grid {
+    grid-template-columns: 1fr;
+  }
+  .fecha-row {
+    grid-template-columns: 1fr;
+  }
+  .isotope-selector-global .input-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .isotope-selector-global .input-group select {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .calculator-card {
+    padding: 20px 16px;
+  }
+  .historial-col {
+    padding: 16px;
+  }
+}

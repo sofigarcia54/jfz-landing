@@ -1,23 +1,27 @@
 function ProjectHero() {
   return (
-    <section className="project-hero">
+   <section className="project-hero">
 
-      <div className="container">
+      <div className="hero-overlay">
 
-        <span className="hero-tag">
-          Herramienta Profesional
-        </span>
+        <p className="hero-frase">
+          Tecnología aplicada a la radiofarmacia
+        </p>
 
         <h1>
           Calculadora de
           <span> Actividad Radiactiva</span>
         </h1>
 
-        <p>
+        <p className="hero-text">
           Herramienta diseñada para realizar cálculos de decaimiento
           radiactivo, tiempo de desintegración y retirada de materiales
-          radiactivos utilizada en procesos de radiofarmacia.
+          radiactivos utilizados en procesos de radiofarmacia.
         </p>
+
+        <a href="#calculadora" className="hero-btn">
+          Ir a la calculadora
+        </a>
 
       </div>
 
