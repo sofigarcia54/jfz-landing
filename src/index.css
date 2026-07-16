@@ -215,26 +215,6 @@ background:#050505;
     overflow: hidden;
 }
 
-/* pequeños puntos luminosos */
-
-/*
-.project-hero::before{
-
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    background-image:
-    radial-gradient(#16e9b4 1px, transparent 1px);
-
-    background-size:90px 90px;
-
-    opacity:.15;
-
-}
-*/
 
 .hero-overlay{
     position:relative;
@@ -310,18 +290,74 @@ background:#050505;
     margin-top:180px;
 }
 
-@media (max-width: 768px) {
 
-  .project-hero h1{
-    font-size:2.8rem;
+
+@media (max-width:768px){
+
+  /* HEADER */
+
+  .header{
+    padding:15px 0;
   }
 
-  .hero-text{
-    font-size:1rem;
+  .nav-container{
+    flex-direction:column;
+    align-items:center;
+    gap:20px;
+    text-align:center;
+  }
+
+  .logo{
+    justify-content:center;
+  }
+
+  .logo img{
+    width:60px;
+    height:auto;
+  }
+
+  .logo h1{
+    font-size:1.8rem;
+  }
+
+  .tagline{
+    font-size:.7rem;
+    letter-spacing:3px;
   }
 
   .nav-menu ul{
-    gap:18px;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+  }
+
+  /* HERO */
+
+  .project-hero{
+    min-height:100vh;
+    padding:160px 20px 80px;
+  }
+
+  .hero-frase{
+    font-size:1rem;
+    margin-bottom:20px;
+  }
+
+  .project-hero h1{
+    font-size:2.8rem;
+    line-height:1.15;
+    letter-spacing:-1px;
+    margin-bottom:20px;
+  }
+
+  .hero-text{
+    max-width:100%;
+    font-size:1rem;
+    line-height:1.7;
+  }
+
+  .hero-btn{
+    margin-top:60px;
   }
 
 }
